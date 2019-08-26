@@ -17,17 +17,29 @@ public class MainActivity extends AppCompatActivity {
         final EditText edtNum1 = (EditText)findViewById(R.id.edtNum1);
         final EditText edtNum2 = (EditText)findViewById(R.id.edtNum2);
         Button btnResult = (Button)findViewById(R.id.btnResult);
+        Button btnHieu = (Button)findViewById(R.id.btnHieu);
         final TextView tvResult = (TextView)findViewById(R.id.tvResult);
+
 
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 double num1 = Double.parseDouble(edtNum1.getText().toString());
                 double num2 = Double.parseDouble(edtNum2.getText().toString());
-
                 double total = num1 +num2;
 
-                tvResult.setText("Ket qua la: " + total);
+                tvResult.setText("Tong la: " + total);
+            }
+        });
+        btnHieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double num1 = Double.parseDouble(edtNum1.getText().toString());
+                double num2 = Double.parseDouble(edtNum2.getText().toString());
+
+                double hieu = num1 - num2;
+
+                tvResult.setText("Hieu la: " + hieu);
             }
         });
     }
